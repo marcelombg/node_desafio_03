@@ -20,7 +20,8 @@
         "start": "node build/server.js"
     }
   - criar arquivo .npmrc com o conteúdo save-exact=true
-  - criar arquivo .env
+  - criar arquivo .env e .env.example
+  - criar arquivo .gitignore
   - npm i dotenv
   - npm i zod
   - npm i eslint @rocketseat/eslint-config -D

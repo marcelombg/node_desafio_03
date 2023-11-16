@@ -1,0 +1,35 @@
+{
+  "name": "node_desafio_03",
+  "version": "1.0.0",
+  "description": "- Criar repositório no git\r   - git init\r   - gh repo create node_desafio_03",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx watch src/server.ts",
+    "build": "tsup src --out-dir build",
+    "start": "node build/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcelombg/node_desafio_03.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcelombg/node_desafio_03/issues"
+  },
+  "homepage": "https://github.com/marcelombg/node_desafio_03#readme",
+  "devDependencies": {
+    "@rocketseat/eslint-config": "2.1.0",
+    "@types/node": "^20.9.1",
+    "eslint": "8.53.0",
+    "tsup": "^7.3.0",
+    "tsx": "^4.1.2",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "dotenv": "16.3.1",
+    "fastify": "^4.24.3",
+    "zod": "3.22.4"
+  }
+}

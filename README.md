@@ -9,7 +9,7 @@
   - npm init -y
   - npm i typescript @types/node tsx tsup -D
   - npx tsc --init
-  - Arquivo tsconfig.json trocar "targe" para "es2020"
+  - Arquivo tsconfig.json trocar "target" para "es2020"
   - npm i fastify
   - criar arquivo app.ts na pasta src
   - criar arquivo server.ts na pasta src

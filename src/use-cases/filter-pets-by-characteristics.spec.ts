@@ -1,19 +1,19 @@
 import { expect, describe, it, beforeEach } from 'vitest'
 import { InMemoryPetsRepository } from '@/repositories/in-memory/in-memory-pets-repository'
-import { SearchPetsUseCase } from './search-pets'
+import { FilterPetsByCharacteristicsUseCase } from './filter-pets-by-characteristics'
 
 let petsRepository: InMemoryPetsRepository
-let sut: SearchPetsUseCase
+let sut: FilterPetsByCharacteristicsUseCase
 
-describe('Search Pets Use Case', () => {
+describe('Filter Pets By Characteristics Use Case', () => {
 
     beforeEach(async () => {
         petsRepository = new InMemoryPetsRepository()
-        sut = new SearchPetsUseCase(petsRepository)
+        sut = new FilterPetsByCharacteristicsUseCase(petsRepository)
 
     })
 
-    it('should be able to search pets', async () => {
+    it('should be able to filter pets by characteristics', async () => {
 
         await petsRepository.create({
             name: 'Aslan',
@@ -28,17 +28,16 @@ describe('Search Pets Use Case', () => {
             characteristics: 'Médio porte',
             details: 'Carinhosa',
             city: 'São Bernardo do Campo',
-            adopted: true
-        })
-
-        const { pets } = await sut.execute({
-            query: 'São Paulo',
             adopted: false
         })
 
-        expect(pets).toHaveLength(1)
-        expect(pets).toEqual([
-            expect.objectContaining({city: 'São Paulo'})
-        ])
+        const { pets } = await sut.execute({
+            query: 'Grande porte'
+        })
+
+        expect(pets).toHaveLength(2)
+        expect(pets).toEqual(expect.arrayContaining([
+            expect.objectContaining({ characteristics: 'Grande porte' })
+        ]))
     })
 })

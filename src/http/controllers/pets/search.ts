@@ -20,7 +20,7 @@ export async function search(request: FastifyRequest, reply: FastifyReply) {
 
     if (pets.length === 0) {
         return reply.status(404).send({
-            message: 'Nenhum PET disponível nesta cidade.'
+            message: `Nenhum PET disponível na cidade ${query}.`
         })
     }
 

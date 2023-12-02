@@ -35,7 +35,7 @@ describe('Filter Pets By Characteristics Use Case', () => {
             query: 'Grande porte'
         })
 
-        expect(pets).toHaveLength(2)
+        expect(pets).toHaveLength(1)
         expect(pets).toEqual(expect.arrayContaining([
             expect.objectContaining({ characteristics: 'Grande porte' })
         ]))

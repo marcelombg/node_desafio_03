@@ -34,8 +34,7 @@ model Pet {
   city            String
   adopted         Boolean  @default(false)
   created_at      DateTime @default(now())
-  ONG             ONG[]
-
+  
   @@map("pets")
 }
 
@@ -46,8 +45,6 @@ model ONG {
   phone           String?
   whatsapp_number String
   address         String
-  pet             Pet     @relation(fields: [pet_id], references: [id])
-  pet_id          String
 
   @@map("ongs")
 }

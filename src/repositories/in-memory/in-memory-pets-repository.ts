@@ -1,9 +1,9 @@
 import { Prisma, Pet } from "@prisma/client";
 import { randomUUID } from "crypto";
-import { PetsRepository, filterByCharacteristicsParams } from "../pets-repository";
+import { PetsRepository } from "../pets-repository";
 
 export class InMemoryPetsRepository implements PetsRepository {
-    
+       
     public items: Pet[] = []
 
     async findById(id: string) {
@@ -21,13 +21,8 @@ export class InMemoryPetsRepository implements PetsRepository {
         return this.items.filter((item) => item.city.includes(query))
     }
 
-    async filterByCharacteristics(params: filterByCharacteristicsParams) {
-        return this.items.filter((item) => {
-            const pet = {
-                characteristics: params.characteristics
-            }
-            return pet 
-        })
+    async filterByCharacteristics(query: string) {
+        return this.items.filter((item) => item.characteristics.includes(query))
     }
 
     async create(data: Prisma.PetCreateInput) {

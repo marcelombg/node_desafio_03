@@ -1,5 +1,5 @@
-import { Prisma, ONG } from "@prisma/client";
+import { Prisma, Ong } from "@prisma/client";
 
 export interface OngsRepository {
-    create(data: Prisma.ONGCreateInput) : Promise<ONG>
+    create(data: Prisma.OngCreateInput) : Promise<Ong>
 }

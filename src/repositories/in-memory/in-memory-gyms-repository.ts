@@ -1,13 +1,13 @@
-import { ONG, Prisma } from "@prisma/client";
+import { Ong, Prisma } from "@prisma/client";
 import { randomUUID } from "crypto";
 import { OngsRepository } from "../ongs-repository";
 
 export class InMemoryOngsRepository implements OngsRepository {
     
-    public items: ONG[] = []
+    public items: Ong[] = []
 
 
-    async create(data: Prisma.ONGCreateInput) {
+    async create(data: Prisma.OngCreateInput) {
         const ong = {
             id: data.id ?? randomUUID(),
             title: data.title,

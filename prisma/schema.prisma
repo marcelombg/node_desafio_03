@@ -38,13 +38,13 @@ model Pet {
   @@map("pets")
 }
 
-model ONG {
+model Ong {
   id              String  @id @default(uuid())
   title           String
-  description     String?
-  phone           String?
-  whatsapp_number String
-  address         String
+  description     String
+  phone           String
+  whatsapp_number String?
+  address         String?
 
   @@map("ongs")
 }
